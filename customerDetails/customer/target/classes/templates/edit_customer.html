@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+<meta charset="ISO-8859-1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+	  rel="stylesheet" 
+	  integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" 
+	  crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<style>
+	.container{
+		padding-top: 50px;
+	}
+	.form-group{
+		padding: 10px;
+	}
+</style>
+
+</head>
+<body>
+
+<div class = "container">
+	<div class = "row">
+		<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card"
+		style="background-color: lavender;">
+		<h1 class = "text-center"> Update Customer </h1>
+		<div class = "card-body">
+			<form th:action="@{/customers/{id} (id=${customer.id})}" th:object = "${customer}" method="POST">
+				<div class="row">
+					<div class ="form-group col-6">
+						<input
+						type = "text"
+						name = "first_name"
+						th:field = "*{first_name}"
+						class = "form-control"
+						placeholder="Enter Customer First Name" 
+						/>
+					</div>
+					<div class ="form-group col-6">
+						<input
+						type = "text"
+						name = "last_name"
+						th:field = "*{last_name}"
+						class = "form-control"
+						placeholder="Enter Customer Last Name" 
+						/>
+					</div>
+				</div>
+				<div class="row">
+					<div class ="form-group col-6">
+						<input
+						type = "text"
+						name = "address"
+						th:field = "*{address}"
+						class = "form-control"
+						placeholder="Customer Address" 
+						/>
+					</div>
+					<div class ="form-group col-6">
+						<input
+						type = "text"
+						name = "city"
+						th:field = "*{city}"
+						class = "form-control"
+						placeholder="Customer City" 
+						/>
+					</div>
+				</div>
+				<div class="row">
+					<div class ="form-group col-6">
+						<input
+						type = "text"
+						name = "state"
+						th:field = "*{state}"
+						class = "form-control"
+						placeholder="Customer State" 
+						/>
+					</div>
+					<div class ="form-group col-6">
+						<input
+						type = "text"
+						name = "email"
+						th:field = "*{email}"
+						class = "form-control"
+						placeholder="Customer Email" 
+						/>
+					</div>
+				</div>
+				<div class="row">
+					<div class ="form-group col-6">
+						<input
+						type = "text"
+						name = "phone"
+						th:field = "*{phone}"
+						class = "form-control"
+						placeholder="Customer Phone" 
+						/>
+					</div>
+				</div>
+				
+				<span class = "box-footer" id="submit12">
+					<button id="submit12" type="submit" class = "btn btn-primary" style="float:right; color: white;">
+						Submit
+					</button>
+				</span>
+				<span class = "box-footer">
+					<a id="cancel" type="submit" th:href="@{/students}" class = "btn btn-danger" >
+							Cancel
+						</a>
+					</span>
+				</form>
+			
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
